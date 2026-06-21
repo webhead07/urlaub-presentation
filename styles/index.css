@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.grid-background{
+    min-height: 100vh;
+    min-width: 100vw;
+    
+    position:fixed;
+    z-index: 1;
+
+    background-color:#46ACC2;
+
+}
+.content{
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.title{
+    font-size: 72px;
+
+    text-decoration: underline;
+}
+
+.description{
+    align-self: end;
+
+    animation: descriptionSlideIn 0.8s ease-in;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
+
+.author{
+    align-self: end;
+}
+
+.author > i {
+    font-size: larger;    
+}
+
+.server-img{
+    position: fixed;
+    top: 10px; 
+    left: 5px;
+    z-index: 2;
+
+    height: 150px;
+    width: 150px;
+
+    border-radius: 12px;
+
+    animation: serverRollIn 1.2s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.website-img{
+    position: fixed;
+    top: 10px; 
+    right: 5px;
+    z-index: 2;
+
+    height: 150px;
+    width: 150px;
+
+    border-radius: 12px;
+
+    animation: websiteRollIn 1.2s ease-in;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+.computer-img{
+    position: fixed;
+    bottom: 10px; 
+    left: 5px;
+    z-index: 2;
+
+    height: 150px;
+    width: 150px;
+
+    border-radius: 12px;
+    
+    animation: computerCurve 1.2s linear forwards;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+.email-img{
+    position: fixed;
+    bottom: 10px; 
+    right: 5px;
+    z-index: 2;
+
+    height: 150px;
+    width: 150px;
+
+    border-radius: 12px;
+
+    animation: emailCurve 1.2s linear forwards;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+.click-img{
+    position: fixed;
+    top: 71%; 
+    left: 52%;
+    z-index: 3;
+
+    height: 75px;
+    width: 75px;
+
+    animation: clickBounce 1.2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.button-img{
+    position:fixed;
+    top: 65%; 
+    left: 45%;
+    z-index: 2;
+
+    height: 100px;
+    width: 100px;
+
+    animation: buttonFade 1.2s ease;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+
+@keyframes descriptionSlideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes serverRollIn {
+    from {
+        transform: translateX(100vw) rotate(0deg);
+        opacity:0
+    } to {
+        transform: translateX(0) rotate(360deg);
+        opacity:1
+    }
+
+}
+
+@keyframes websiteRollIn {
+    from {
+        transform: translateX(-100vw) rotate(0deg);
+        opacity:0
+    } to {
+        transform: translateX(0) rotate(360deg);
+        opacity:1
+    }
+
+}
+
+@keyframes computerCurve {
+    from{
+        transform: translateX(50vw) translateY(-100vh);
+        opacity: 0;
+    } to {
+        transform: translateX(0) translateY(0);
+        opacity: 
+        1;
+    }
+}
+
+@keyframes emailCurve {
+    from{
+        transform: translateX(-50vw) translateY(-100vh);
+        opacity: 0;
+    } to {
+        transform: translateX(0) translateY(0);
+        opacity: 
+        1;
+    }
+}
+
+@keyframes clickBounce {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 0.5; }
+    95% { transform: scale(1.15); opacity: 1;}
+    100% { transform: scale(1);}
+}
+
+@keyframes buttonFade {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
