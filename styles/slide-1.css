@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background-color: #114B5F;
+
+    color: #ffffff;
+}
+
+main{
+    width: 45vw;
+    height: 20vh;
+}
+
+h1{
+    font-size: xxx-large;
+}
+
+li{
+    font-size: larger;
+    animation: pointsFlyIn 0.8s ease-in  backwards;
+}
+
+@keyframes pointsFlyIn {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
