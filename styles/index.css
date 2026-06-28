@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body{
@@ -12,6 +13,10 @@ body{
 
     min-height: 100vh;
     min-width: 100vw;
+
+    user-select: none;
+
+    color: wheat;
 }
 
 .grid-background{
@@ -21,16 +26,34 @@ body{
     position:fixed;
     z-index: 1;
 
-    background-color:#46ACC2;
+    background-color:#114B5F;
 
 }
+
+.middle-opacity{
+    position: fixed;
+    z-index: 2;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background-color: black;
+    opacity: .25;
+}
+
 .content{
     position: relative;
-    z-index: 2;
+    z-index: 3;
 
     display: flex;
     flex-direction: column;
     gap: 3px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+
+    border-radius: 24px;
+    padding: 2em
 }
 
 .title{
@@ -55,18 +78,19 @@ body{
     font-size: larger;    
 }
 
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 18%;
+}
+
 .server-img{
     position: fixed;
     top: 10px; 
     left: 5px;
     z-index: 2;
 
-    height: 150px;
-    width: 150px;
-
-    border-radius: 12px;
-
-    animation: serverRollIn 1.2s ease-in;
+    animation: serverRollIn 1s ease-in;
     animation-delay: 1s;
     animation-fill-mode: backwards;
 }
@@ -77,12 +101,8 @@ body{
     right: 5px;
     z-index: 2;
 
-    height: 150px;
-    width: 150px;
 
-    border-radius: 12px;
-
-    animation: websiteRollIn 1.2s ease-in;
+    animation: websiteRollIn 1s ease-in;
     animation-delay: 1s;
     animation-fill-mode: backwards;
 }
@@ -92,12 +112,8 @@ body{
     left: 5px;
     z-index: 2;
 
-    height: 150px;
-    width: 150px;
-
-    border-radius: 12px;
     
-    animation: computerCurve 1.2s linear forwards;
+    animation: computerCurve 1s linear forwards;
     animation-delay: 1s;
     animation-fill-mode: backwards;
 }
@@ -106,44 +122,38 @@ body{
     bottom: 10px; 
     right: 5px;
     z-index: 2;
-
-    height: 150px;
-    width: 150px;
-
-    border-radius: 12px;
-
-    animation: emailCurve 1.2s linear forwards;
+    
+    animation: emailCurve 1s linear forwards;
     animation-delay: 1s;
     animation-fill-mode: backwards;
 }
 .click-img{
     position: fixed;
-    top: 71%; 
-    left: 52%;
+    top: 73%; 
+    left: 55%;
     z-index: 3;
 
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
 
-    animation: clickBounce 1.2s ease;
-    animation-delay: 1s;
+    animation: clickBounce 1s ease;
+    animation-delay: 2s;
     animation-fill-mode: backwards;
 }
 
 .button-img{
     position:fixed;
     top: 65%; 
-    left: 45%;
+    left: 50%;
     z-index: 2;
 
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 
-    animation: buttonFade 1.2s ease;
+    animation: buttonFade 1s ease;
     animation-delay: 1s;
     animation-fill-mode: backwards;
 }
-
 
 @keyframes descriptionSlideIn {
     from {
@@ -155,7 +165,6 @@ body{
         opacity: 1;
     }
 }
-
 
 @keyframes serverRollIn {
     from {
@@ -185,8 +194,7 @@ body{
         opacity: 0;
     } to {
         transform: translateX(0) translateY(0);
-        opacity: 
-        1;
+        opacity: 1;
     }
 }
 
@@ -196,16 +204,17 @@ body{
         opacity: 0;
     } to {
         transform: translateX(0) translateY(0);
-        opacity: 
-        1;
+        opacity: 1;
     }
 }
 
 @keyframes clickBounce {
-    0% { transform: scale(0.8); opacity: 0; }
-    60% { transform: scale(1.1); opacity: 0.5; }
-    95% { transform: scale(1.15); opacity: 1;}
-    100% { transform: scale(1);}
+    0% { transform: scale(1); opacity: 0; }
+    25% { transform: scale(1); opacity: 0.25; }
+    50% { transform: scale(1); opacity: 0.5;}
+    75% { transform: scale(1.12); opacity: 0.75;}
+    100% { transform: scale(1);
+    opacity: 1;}
 }
 
 @keyframes buttonFade {

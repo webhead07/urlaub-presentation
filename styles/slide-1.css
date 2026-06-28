@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
+
 body{
     display: flex;
 
@@ -12,17 +14,50 @@ body{
     min-width: 100vw;
     min-height: 100vh;
 
+
     background-color: #114B5F;
 
-    color: #ffffff;
+    color: wheat;
+
+    user-select: none;
+}
+
+.canvas{
+    min-height: 100vh;
+    min-width: 100vw;
+
+    position: fixed;
+    z-index: 0;
+}
+
+.middle-opacity{
+    position: fixed;
+    z-index: 2;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background-color: black;
+    opacity: .25;
 }
 
 main{
     width: 45vw;
-    height: 20vh;
+    height: 27vh;
+
+    z-index: 3;
+
+    background: rgba(255,255,255, 0.15);
+    backdrop-filter:blur(5px);
+
+    border-radius: 24px;
+
+    padding:2em
+
 }
 
 h1{
+    text-align: center;
     font-size: xxx-large;
 }
 
@@ -31,12 +66,112 @@ li{
     animation: pointsFlyIn 0.8s ease-in  backwards;
 }
 
+.img{
+    width: 200px;
+    height: 200px;
+
+    border-radius: 24px;
+}
+
+.img-1{
+    position: fixed;
+    right: 5px;
+    top: 1vh;
+
+
+    animation: img-1 .8s ease-in;
+    animation-fill-mode: backwards;
+}
+
+.img-2{
+    position: fixed;
+
+    right:5px;
+    top: 25vh;
+
+    animation: img-2 .8s ease-in;
+    animation-fill-mode: backwards;
+}
+
+.video-mask{
+    position:fixed;
+    right:5px;
+    top:50vh;
+
+    /* width: 150px;
+    height: 150px;
+    border-radius: 24px; */
+    overflow: hidden;
+    /* z-index: 4; */
+}
+.video-mask > .img-3{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    animation: img-3 .8s ease-in;
+    animation-fill-mode: backwards;
+}
+
+.img-4{
+    position: fixed;
+
+    right: 5px;
+    bottom: 1vh;
+
+    animation: img-4 .8s ease-in;
+    animation-fill-mode: backwards;
+}
+
 @keyframes pointsFlyIn {
     from {
         transform: translateX(-100vw);
         opacity: 0;
     } to {
         transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes img-1{
+    from{
+        transform: translateX(-100vw);
+        opacity: 0;
+    } to {
+        transform: translateX(0vh);
+        opacity: 1;
+    }
+}
+
+@keyframes img-2{
+    from{
+        transform: scale(3);
+        opacity: 0;
+    } to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes img-3{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    } to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes img-4{
+    from{
+        transform: translateX(-100vw) rotate(0deg);
+        opacity: 0;
+    } to {
+        transform: translateX(0vw)rotate(360deg);
         opacity: 1;
     }
 }

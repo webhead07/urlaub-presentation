@@ -1,4 +1,5 @@
-window.addEventListener("click", () => {
+window.addEventListener("keydown", (event) => {
+    if(event.key === " ")
     window.location.href = "/pages/slide-1.html"
 }
 )
@@ -33,7 +34,7 @@ function drawGrid(){
     }
 }
 
+
 window.addEventListener("resize", resizeCanvas)
 resizeCanvas()
-
 
